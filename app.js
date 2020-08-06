@@ -47,5 +47,16 @@ function formatMoney(number) {
     return "$" + (number).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
 }
 
+function doubleWealth() {
+    data = data.map((user) => {
+        console.log("user", user);
+        console.log("Data before mapping:",data)
+        return { ...user , money: user.money *2}
+    });
+    console.log("Mapped data:", data)
+    updateDOM();
+}
+
 // Event Listeners
 addUserBtn.addEventListener("click", getRandomUser);
+doubleBtn.addEventListener("click", doubleWealth)
