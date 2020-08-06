@@ -57,6 +57,12 @@ function doubleWealth() {
     updateDOM();
 }
 
+function sortByRichest() {
+    data = data.sort((a, b) => b.money - a.money)
+    updateDOM();
+}
+
 // Event Listeners
 addUserBtn.addEventListener("click", getRandomUser);
 doubleBtn.addEventListener("click", doubleWealth)
+sortBtn.addEventListener("click", sortByRichest);
